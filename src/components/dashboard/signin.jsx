@@ -73,7 +73,7 @@ const SignIn = () => {
       });
   };
   if (redirect) {
-    return <Redirect to="/hotels" />;
+    return <Redirect to="/gemsdata" />;
   }
   return (
     <Grid container>

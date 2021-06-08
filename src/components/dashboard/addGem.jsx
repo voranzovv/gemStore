@@ -6,6 +6,7 @@ import TextField from "./../formsUI/TextField/index";
 import Select from "./../formsUI/Select/index";
 import axios from "axios";
 import FileUpload from "./../formsUI/FileUpload/index";
+import { toast } from 'react-toastify';
 
 const gemCategory = { precious: "precious", semi_precious: "semi_precious" };
 const useStyle = makeStyles((theme) => ({
@@ -47,7 +48,7 @@ const FORM_VALIDATION = Yup.object().shape({
 
 const AddGem = () => {
 
-  const handleSubmit = (e) => {
+const handleSubmit = (e,onSubmitProps) => {
     // e.preventDefault();
     console.log("submitted");
     const data = new FormData();
@@ -58,8 +59,11 @@ const AddGem = () => {
     console.log(data);
     axios
       .post("http://localhost:8000/product", data)
-      .then((res) =>console.log( res.data))
-      .catch((err) => console.log(err));
+      .then((res) =>{console.log( res.data);
+        toast.success("New item Added!!");
+         onSubmitProps.resetForm();
+      })
+      .catch((err) => console.log(err.response.data));
   };
   const classes = useStyle();
 
@@ -71,7 +75,7 @@ const AddGem = () => {
             <Formik
               initialValues={{ ...INITIAL_FORM_STATE }}
               validationSchema={FORM_VALIDATION}
-              onSubmit={(e) => handleSubmit(e)}
+              onSubmit={(e,onSubmitProps) => handleSubmit(e,onSubmitProps)}
             >
               <Form>
                 <Grid container spacing={2}>

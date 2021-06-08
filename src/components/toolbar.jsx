@@ -22,30 +22,30 @@ function Toolbar(props) {
               </button>
               <a href="index.html" className="navbar-brand brand">
                 {" "}
-                SCORILO{" "}
+                Exclusive Jewels{" "}
               </a>
             </div>
             <div id="navbar-collapse-02" class="collapse navbar-collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li className="propClone">
-                {/* <Link to="/">Home</Link> */}
-                  <a href="/">Home</a>
+                <Link to="/">Home</Link>
+                  {/* <a href="/">Home</a> */}
                 </li>
                 <li className="propClone">
-                {/* <Link to="/gem">Gems</Link> */}
-                  <a href="/gem">Gems</a>
+                <Link to="/gem">Gems</Link>
+                  {/* <a href="/gem">Gems</a> */}
                 </li>
                 <li className="propClone">
-                {/* <Link to="/gem">Product</Link> */}
-                  <a href="/jewellery">Jewellery</a>
+                <Link to="/gem">Product</Link>
+                  {/* <a href="/jewellery">Jewellery</a> */}
                 </li>
                 <li className="propClone">
-                {/* <Link to="/gem">Checkout</Link> */}
-                  <a href="checkout.html">Checkout</a>
+                <Link to="/gem">Checkout</Link>
+                  {/* <a href="checkout.html">Checkout</a> */}
                 </li>
                 <li className="propClone">
-                {/* <Link to="/contact">Contact</Link> */}
-                  <a href="contact.html">Contact</a>
+                <Link to="/signin">Dashboard</Link>
+                  {/* <a href="contact.html">Contact</a> */}
                 </li>
               </ul>
             </div>

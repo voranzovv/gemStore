@@ -7,7 +7,7 @@ const PStones = [
     link: "/precious-stone",
     description: "Description of fucking ruby",
     img: "images/ruby.jpg",
-    cat: "gem",
+    cat: "precious",
   },
   {
     id: "ps2",
@@ -15,7 +15,7 @@ const PStones = [
     link: "/precious-stone",
     description: "Description of fucking sapphire",
     img: "images/sapphire.jpg",
-    cat: "gem",
+    cat: "precious",
   },
   {
     id: "ps3",
@@ -23,7 +23,7 @@ const PStones = [
     link: "/precious-stone",
     description: "Description of fucking spinal",
     img: "images/spinel.jpg",
-    cat: "gem",
+    cat: "precious",
   },
 ];
 
@@ -34,7 +34,7 @@ const SPStones = [
     link: "/precious-stone",
     description: "Description of fucking ruby",
     img: "images/ruby.jpg",
-    cat: "gem",
+    cat: "semi_precious",
   },
   {
     id: "ps2",
@@ -42,7 +42,7 @@ const SPStones = [
     link: "/precious-stone",
     description: "Description of fucking sapphire",
     img: "images/sapphire.jpg",
-    cat: "gem",
+    cat: "semi_precious",
   },
   {
     id: "ps3",
@@ -50,7 +50,7 @@ const SPStones = [
     link: "/precious-stone",
     description: "Description of fucking spinal",
     img: "images/spinel.jpg",
-    cat: "gem",
+    cat: "semi_precious",
   },
 ];
 

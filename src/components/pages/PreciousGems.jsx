@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import ContentTitle from "./../contentTitle";
-import ContentImage from "./../contentImage";
+import ContentTitle from "../contentTitle";
+import ContentImage from "../contentImage";
 import axios from "axios";
 
-function AllGems(props) {
-  const [allGems, setgems] = useState([]);
+function PreciousGems(props) {
+  const [allPreciousGems, setPreciousGems] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:8000/product")
+      .get(process.env.REACT_APP_BASE_URL+"/product")
       .then((gems) => {
-        setgems(gems.data);
+        setPreciousGems(gems.data);
       })
       .catch((err) => console.log("there is errors", err));
   }, []);
@@ -31,11 +31,11 @@ function AllGems(props) {
         </div>
       </div>
 
-      {!allGems ? null : (
+      {!allPreciousGems ? null : (
         <div className="container toparea">
           <ContentTitle/>
           <div className="row">
-            {allGems.map((ps) => (
+            {allPreciousGems.filter(val=>val.category ==='precious').map((ps) => (
               <ContentImage data={ps} />
             ))}
           </div>
@@ -45,4 +45,4 @@ function AllGems(props) {
   );
 }
 
-export default AllGems;
+export default PreciousGems;

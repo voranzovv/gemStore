@@ -18,69 +18,6 @@ const useStyles = makeStyles({
 const ContentImage = ({ data }) => {
   const classes = useStyles();
   return (
-    // <div class="col-md-4">
-    //   <div class="productbox">
-    //     <div class="fadeshop">
-    //       <div
-    //         class="captionshop text-center"
-    //         style={{ display: "none", height: 140 }}
-    //       >
-    //         <h3>{data.name}</h3>
-    //         <p>{data.description}</p>
-    //         <p>
-    //           {/* <a href="#" class="learn-more detailslearn">
-    //                   <i class="fa fa-shopping-cart"></i> Purchase
-    //                 </a> */}
-    //           <a
-    //             href={data.cat === "gem" ? "allgems" : data._id}
-    //             class="learn-more detailslearn"
-    //           >
-    //             <i class="fa fa-link"></i> Details
-    //           </a>
-    //         </p>
-    //       </div>
-    //       <span class="maxproduct">
-    //         <img
-    //           src={
-    //             !data.created_at
-    //               ? data.img
-    //               : "http://localhost:8000/uploads/" + data.image
-    //           }
-    //           alt={data.name}
-    //           style={{  }}
-    //         />
-    //         <CardMedia
-    //           // className={classes.media}
-    //           title="Contemplative Reptile"
-    //           image={
-    //             !data.created_at
-    //               ? data.img
-    //               : "http://localhost:8000/uploads/" + data.image
-    //           }
-    //         />
-    //       </span>
-    //     </div>
-    //     <div class="product-details">
-    //       <a href={data.cat === "gem" ? "allgems" : data._id}>
-    //         <h1>{data.name}</h1>
-    //       </a>
-
-    //       {data.cat === "gem" ? null : (
-    //         <a
-    //           className="btn btn-danger"
-    //           href={data.cat === "gem" ? "allgems" : data._id}
-    //         >
-    //           Edit{" "}
-    //         </a>
-    //       )}
-
-    //       {/* <span class="price">
-    //               <span class="edd_price">$49.00</span>
-    //             </span> */}
-    //     </div>
-    //   </div>
-    // </div>
-
     <div className="col-md-4">
       <Card className="productbox">
         <CardActionArea>
@@ -94,7 +31,15 @@ const ContentImage = ({ data }) => {
             }
           />
           <CardContent>
-            <a href={data.cat === "gem" ? "allgems" : data._id}>
+            <a
+              href={
+                data.cat === "precious"
+                  ? "pgems"
+                  : data.cat === "semi_precious"
+                  ? "spgems"
+                  : data._id
+              }
+            >
               <Typography gutterBottom variant="h5" component="h2">
                 {data.name}
               </Typography>
@@ -102,7 +47,7 @@ const ContentImage = ({ data }) => {
             <Typography variant="body2" color="textSecondary" component="p">
               {data.description.length < 44
                 ? data.description
-                : data.description.substring(0, 44)+'...'}
+                : data.description.substring(0, 44) + "..."}
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -111,7 +56,13 @@ const ContentImage = ({ data }) => {
             {data.cat === "gem" ? null : (
               <a
                 className="btn btn-danger btn-block "
-                href={data.cat === "gem" ? "allgems" : data._id}
+                href={
+                  data.cat === "precious"
+                    ? "pgems"
+                    : data.cat === "semi_precious"
+                    ? "spgems"
+                    : data._id
+                }
               >
                 See more{" "}
               </a>

@@ -7,10 +7,10 @@ const Home = () => {
   return (
     <div>
       <Banner />
-      <Steps />
-      <LatestItem />
-      <Area />
       <Testimonial />
+      <Steps />
+      {/* <LatestItem /> */}
+      {/* <Area /> */}
     </div>
   );
 };
